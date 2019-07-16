@@ -10,14 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- 
+
  */
 @import 'bootstrap';
 
 body{
-  
-    background-image: url(http://nickmarx.com/wp-content/uploads/2016/08/gradient.jpg);
-    /* background-image: url(http://www.brandgradients.com/img/backgrounds/instagram-hex-colors-gradient-background.png); */
+    background: radial-gradient(circle farthest-corner at 60% 150%, #fec564, transparent 0%), radial-gradient(circle farthest-corner at 0 153%, #fec564, transparent 40%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 70%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 70%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
     background-position: center;
     background-attachment: fixed;
 }
