@@ -15,8 +15,8 @@ To run this project we have to add one Instagram user credential.
 
 Add your credentials in "/config/credentials.yml.enc" with the following name.
 ```ruby
-instagram_username:  <Instagram Username>
-instagram_password:  <Instagram Password>
+instagram_username:  "<Instagram Username>"
+instagram_password:  "<Instagram Password>"
 ```
 
 Or you can directly add the credential in "/controller/insta_follower_controller.rb" line number 23,24 for quick setup.
@@ -27,4 +27,4 @@ password = browser.text_field(id: "id_password").set("<Instagram Password here>"
 ```
 
 ## Disclaimer
-This project is for EDUCATION PURPOSE ONLY. Don't use them for illegal activities. You are the only responsible for your actions! 
+This project is for EDUCATION PURPOSE ONLY. Don't use them for illegal activities. You are the only responsible for your actions!
