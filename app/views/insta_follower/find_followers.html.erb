@@ -1,0 +1,23 @@
+<br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				<%= link_to "<- Back" , root_path ,class: "link"%>
+				<h3 class="text-primary text-center"><%= params[:mode] %> of "<%= params[:uid] %>"</h3>
+			</div>
+			<div>
+				<% if @prvt %>
+					<h2 class="text-center text-danger bg-warning well">Opps, This account is private.</h2>
+				<% else %>
+				<ul><% i=0 %>
+				<% @nodeset.each do |follower| %>
+					<li class="well well-sm"><img src="<%= @pics[i+1].attr("src") %>" class="img rounded" height="100px" > <%= @realnames[i].text %> (<%= follower.text %>)</li>
+					<% i+=1 %>
+				<% end %>
+				</ul>
+				<% end %>
+			<div>
+		</div>
+	</div>
+</div>

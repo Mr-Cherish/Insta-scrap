@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row" style="margin-top: 5%;">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 jumbotron text-center" style="background-color: rgba(80,180,195,0.6);border-radius: 20px;">
+			<h1 class="text-warning text-center">Instagram Scraper</h1>
+			<table style="width: 100%">
+			<%= form_tag("insta_follower/find_followers", method: "post") do %>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+			  		<td><%= label_tag(:uid, "Instagram Username :") %></td>
+			  		<td><%= text_field_tag :uid ,nil, class: "form-control", required: true	 %></td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+			  		<td><%= label_tag(:total, "What to scrap?") %></td>
+			  		<td><%= radio_button_tag 'mode', "Followers", true %>Follower &nbsp;&nbsp;<%= radio_button_tag 'mode', "Following" %>Following	</td>
+			  	</tr>
+			  	<tr><td>&nbsp;</td></tr>
+				<tr>
+			  		<td><%= label_tag(:total, "Approx wanted :") %></td>
+			  		<td><%= number_field_tag :total ,nil, class: "form-control", required: true, min: 20 %></td>
+			  	</tr>
+			  	<tr><td>&nbsp;</td></tr>
+			  	<tr>
+			  		<td colspan="2" class="text-center"><%= submit_tag "Fetch", class: "btn btn-success" %>&nbsp;&nbsp;&nbsp;<input type="reset" value="reset" class="btn btn-danger"></td>
+			  	</tr>
+			<% end %>
+			</table>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>
