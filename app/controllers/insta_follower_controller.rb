@@ -62,13 +62,13 @@ class InstaFollowerController < ApplicationController
 			sleep(3)
 
 			#Loop to scroll the followers/followings modal till we get desired number of accounts.
-			# i = 1
-			# loop do
-			# browser.driver.execute_script("document.querySelector('body > div.RnEpo.Yx5HN > div > div.isgrP').scroll(0,(60 * #{i}))")
-			# i+=1
-			# break if browser.as(class: "FPmhX").count >= params["total"].to_i
-			# sleep 0.1
-			# end
+			i = 1
+			loop do
+			browser.driver.execute_script("document.querySelector('body > div.RnEpo.Yx5HN > div > div.isgrP').scroll(0,(60 * #{i}))")
+			i+=1
+			break if browser.as(class: "FPmhX").count >= params["total"].to_i
+			sleep 0.1
+			end
 
 			#passing webpage code to Nokogiri.
 			document = Nokogiri::HTML(browser.html)
