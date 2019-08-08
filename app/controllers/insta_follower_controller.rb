@@ -18,7 +18,7 @@ class InstaFollowerController < ApplicationController
         Selenium::WebDriver::Chrome.driver_path = "/app/.chromedriver/bin/chromedriver"
 	  	#Open browser which will controlled by our code. (Browser options are :chrome, :safari , :firefox)
       opts = {
-        headless: true
+        headless: false
       }
 
       # if (chrome_bin = ENV.fetch('GOOGLE_CHROME_SHIM', nil))
@@ -33,21 +33,21 @@ class InstaFollowerController < ApplicationController
 		browser.goto("https://www.instagram.com/accounts/login/?force_classic_login")
     p "opening webpage #{browser.html}"
 
-    p "Username: #{Rails.application.credentials.instagram_username} "
+    p "Username: #{ENV['instagram_username']} "
     p "Password: #{Rails.application.credentials.instagram_password} "
 		#Enter username & password in the form fields.
-		username = browser.text_field(id: "id_username").set(Rails.application.credentials.instagram_username)
-		password = browser.text_field(id: "id_password").set(Rails.application.credentials.instagram_password)
+		username = browser.text_field(id: "id_username").set(ENV['instagram_username'])
+		password = browser.text_field(id: "id_password").set(ENV['instagram_password'])
     p 'adding login data'
 		#Click Login button.
 		browser.input(class: 'button-green').click
-
+    p 'Redirecting to user profile'
 		sleep(1)
 
 		#Open user profile page.
 		browser.goto("https://www.instagram.com/#{params["uid"]}/")
 		sleep(1)
-
+    p "browser: #{browser.html}"
 		#Handling private account situation.
 		@private_acc = browser.h2s(class: "rkEop").first.exists?
 	  	if @private_acc
