@@ -60,7 +60,7 @@ class InstaFollowerController < ApplicationController
 				browser.as(class: "-nal3")[1].click
 			end
 			sleep(3)
-
+      p "followers: #{browser.html}"
 			#Loop to scroll the followers/followings modal till we get desired number of accounts.
 			i = 1
 			loop do
