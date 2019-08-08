@@ -24,13 +24,14 @@ class InstaFollowerController < ApplicationController
       # if (chrome_bin = ENV.fetch('GOOGLE_CHROME_SHIM', nil))
       #  opts.merge!( options: {binary: '/app/.apt/usr/bin/google-chrome'})
       # end
-
+      p 'initializing browser'
       browser = Watir::Browser.new :chrome, opts
+      p "browser=#{browser}"
 	  	#browser = Watir::Browser.new :firefox
 
 	  	#Open classic login page of instagram.
 		browser.goto("https://www.instagram.com/accounts/login/?force_classic_login")
-
+    p "opening browser"
 		#Enter username & password in the form fields.
 		username = browser.text_field(id: "id_username").set(Rails.application.credentials.instagram_username)
 		password = browser.text_field(id: "id_password").set(Rails.application.credentials.instagram_password)
