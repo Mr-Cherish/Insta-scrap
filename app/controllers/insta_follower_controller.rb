@@ -16,7 +16,7 @@ class InstaFollowerController < ApplicationController
 
 	  	#Open browser which will controlled by our code. (Browser options are :chrome, :safari , :firefox)
       opts = {
-        headless: false
+        headless: true
     }
 
       if (chrome_bin = ENV.fetch('GOOGLE_CHROME_SHIM', nil))
