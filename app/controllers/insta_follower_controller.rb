@@ -19,9 +19,9 @@ class InstaFollowerController < ApplicationController
         headless: true
     }
 
-      if (chrome_bin = ENV.fetch('GOOGLE_CHROME_SHIM', nil))
-        opts.merge!( options: {binary: chrome_bin})
-      end
+      # if (chrome_bin = ENV.fetch('GOOGLE_CHROME_SHIM', nil))
+        opts.merge!( options: {binary: '/app/.apt/usr/bin/google-chrome'})
+      # end
 
       browser = Watir::Browser.new :chrome, opts
 	  	#browser = Watir::Browser.new :firefox
