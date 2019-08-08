@@ -31,7 +31,7 @@ class InstaFollowerController < ApplicationController
 
 	  	#Open classic login page of instagram.
 		browser.goto("https://www.instagram.com/accounts/login/?force_classic_login")
-    p "opening browser"
+    p "opening webpage #{browser.html}"
 
     p "Username: #{Rails.application.credentials.instagram_username} "
     p "Password: #{Rails.application.credentials.instagram_password} "
