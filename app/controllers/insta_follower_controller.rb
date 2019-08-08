@@ -14,15 +14,15 @@ class InstaFollowerController < ApplicationController
 	  	attempts = 0
 	  	begin
 
-        Selenium::WebDriver::Chrome.path = "path/to/google-chrome"
-        Selenium::WebDriver::Chrome.driver_path = "/app/.apt/usr/bin/google-chrome"
+        Selenium::WebDriver::Chrome.path = "/app/.apt/usr/bin/google-chrome"
+        Selenium::WebDriver::Chrome.driver_path = "/app/.chromedriver/bin/chromedriver"
 	  	#Open browser which will controlled by our code. (Browser options are :chrome, :safari , :firefox)
       opts = {
         headless: true
-    }
+      }
 
       # if (chrome_bin = ENV.fetch('GOOGLE_CHROME_SHIM', nil))
-        # opts.merge!( options: {binary: '/app/.apt/usr/bin/google-chrome'})
+      #  opts.merge!( options: {binary: '/app/.apt/usr/bin/google-chrome'})
       # end
 
       browser = Watir::Browser.new :chrome, opts
