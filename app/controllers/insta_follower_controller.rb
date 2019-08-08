@@ -14,8 +14,8 @@ class InstaFollowerController < ApplicationController
 	  	attempts = 0
 	  	begin
 
-	  	#Open browser which will controlled by our code. (Other browser option is :safari , :firefox)
-	  	browser = Watir::Browser.new :chrome
+	  	#Open browser which will controlled by our code. (Browser options are :chrome, :safari , :firefox)
+	  	browser = Watir::Browser.new :firefox
 
 	  	#Open classic login page of instagram.
 		browser.goto("https://www.instagram.com/accounts/login/?force_classic_login")
