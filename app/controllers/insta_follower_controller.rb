@@ -34,7 +34,7 @@ class InstaFollowerController < ApplicationController
     p "opening webpage #{browser.html}"
 
     p "Username: #{ENV['instagram_username']} "
-    p "Password: #{Rails.application.credentials.instagram_password} "
+    p "Password: #{ENV['instagram_password']} "
 		#Enter username & password in the form fields.
 		username = browser.text_field(id: "id_username").set(ENV['instagram_username'])
 		password = browser.text_field(id: "id_password").set(ENV['instagram_password'])
