@@ -6,6 +6,7 @@ require 'webdrivers'
 require 'nokogiri'
 
 class InstaFollowerController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
   end
 
@@ -44,7 +45,7 @@ class InstaFollowerController < ApplicationController
 				browser.as(class: "-nal3")[1].click
 			end
 			sleep(3)
-			
+
 			#Loop to scroll the followers/followings modal till we get desired number of accounts.
 			i = 1
 			loop do
@@ -75,5 +76,5 @@ class InstaFollowerController < ApplicationController
 		else
 		  raise
 		end
-  end	
+  end
 end
